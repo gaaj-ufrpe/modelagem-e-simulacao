@@ -5,7 +5,7 @@
 
 using namespace omnetpp;
 
-class Maquina4 : public cSimpleModule {
+class Maquina5 : public cSimpleModule {
   private:
     bool on = false;
 
@@ -22,9 +22,9 @@ class Maquina4 : public cSimpleModule {
     };
 };
 
-Define_Module(Maquina4);
+Define_Module(Maquina5);
 
-int Maquina4::choose(int choices) {
+int Maquina5::choose(int choices) {
     //a função srand seta um seed aleatório e depois a função rand
     //gera um número aleatório. em seguida, o módulo gera um valor
     //inteiro de 0 até choices-1
@@ -33,11 +33,11 @@ int Maquina4::choose(int choices) {
     return rnum % choices;
 }
 
-int Maquina4::randomPortIndex() {
+int Maquina5::randomPortIndex() {
     return choose(gateSize("port"));
 }
 
-void Maquina4::updateDisplay() {
+void Maquina5::updateDisplay() {
     const char* txt2 = "off";
     const char* color = "red";
     const char* status = "status/red";
@@ -55,14 +55,14 @@ void Maquina4::updateDisplay() {
     bubble(txt2);
 }
 
-void Maquina4::initialize() {
+void Maquina5::initialize() {
     if (getIndex() == 0) {
         cMessage *msg = new cMessage("switchMsg");
         send(msg, "port$o", randomPortIndex());
     }
 }
 
-void Maquina4::handleMessage(cMessage *msg) {
+void Maquina5::handleMessage(cMessage *msg) {
     switchState();
     updateDisplay();
     send(msg, "port$o", randomPortIndex());

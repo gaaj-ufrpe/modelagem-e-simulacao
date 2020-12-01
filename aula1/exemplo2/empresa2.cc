@@ -3,9 +3,8 @@
 
 using namespace omnetpp;
 
-class Maquina2 : public cSimpleModule
-{
-private:
+class Maquina2 : public cSimpleModule {
+  private:
     bool on = false;
 
   protected:
@@ -15,16 +14,14 @@ private:
 
 Define_Module(Maquina2);
 
-void Maquina2::initialize()
-{
+void Maquina2::initialize() {
     if (strcmp("m1", getName()) == 0) {
         cMessage *msg = new cMessage("switchMsg");
         send(msg, "out");
     }
 }
 
-void Maquina2::handleMessage(cMessage *msg)
-{
+void Maquina2::handleMessage(cMessage *msg) {
     this->on = !this->on;
     const char* txt = (this->on ? "on" : "off");
     const char* color = (this->on ? "green" : "red");

@@ -31,7 +31,6 @@ void Maquina3::handleMessage(cMessage *msg) {
     switchState();
     updateDisplay();
     send(msg, "out");
-    //TODO criar exemplo 4 com aleatoriedade na direção da mensagem
 }
 
 void Maquina3::updateDisplay() {

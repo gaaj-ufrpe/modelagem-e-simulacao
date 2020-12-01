@@ -1,7 +1,6 @@
 package exemplo3;
 
-simple Maquina3 
-{
+simple Maquina3 {
     parameters:
         @display("i=device/laptop;i2=status/red, red");
     gates:
@@ -9,8 +8,7 @@ simple Maquina3
         output out;
 }
 
-network Empresa3
-{
+network Empresa3 {
     submodules:
         m1: Maquina3;
         m2: Maquina3;

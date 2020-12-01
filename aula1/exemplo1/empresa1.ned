@@ -1,7 +1,6 @@
 package exemplo1;
 
-simple Maquina1
-{
+simple Maquina1 {
     parameters:
         @display("i=device/laptop");
     gates:
@@ -9,8 +8,7 @@ simple Maquina1
         output out;
 }
 
-network Empresa1
-{
+network Empresa1 {
     submodules:
         m1: Maquina1;
         m2: Maquina1;
@@ -20,5 +18,3 @@ network Empresa1
         m2.out --> {delay = 60s;} --> m3.in;
         m3.out --> {delay = 60s;} --> m1.in;
 }
-
-
