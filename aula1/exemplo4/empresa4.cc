@@ -14,7 +14,7 @@ class Maquina4 : public cSimpleModule {
     virtual void handleMessage(cMessage *msg) override;
     virtual void updateDisplay();
     virtual int choose(int choices);
-    virtual const char* getPort(int idx);
+    virtual int randomPortIndex();
 
   public:
     void switchState() {
@@ -23,13 +23,6 @@ class Maquina4 : public cSimpleModule {
 };
 
 Define_Module(Maquina4);
-
-void Maquina4::initialize() {
-    if (strcmp("m1", getName()) == 0) {
-        cMessage *msg = new cMessage("switchMsg");
-        send(msg, "port1$o");
-    }
-}
 
 int Maquina4::choose(int choices) {
     //a função srand seta um seed aleatório e depois a função rand
@@ -40,28 +33,8 @@ int Maquina4::choose(int choices) {
     return rnum % choices;
 }
 
-std::string concat(const char* s1, const char* s2) {
-    std::string result(s1);
-    result.append(s2);
-    return result;
-}
-
-const char* Maquina4::getPort(int idx=-1) {
-    std::vector<const char *> gates = getGateNames();
-    if (idx == -1) {
-        //se o idx for -1, fará uma seleção aleatória
-        idx = choose(gates.size());
-    }
-    return gates.at(idx);
-}
-
-void Maquina4::handleMessage(cMessage *msg) {
-    switchState();
-    updateDisplay();
-    //como as portas são do tipo inout, precisa concatenar com "$o"
-    //para o envio e "$i" para o recebimento.
-    std::string sendPort = concat(getPort(),"$o");
-    send(msg,sendPort.c_str());
+int Maquina4::randomPortIndex() {
+    return choose(gateSize("port"));
 }
 
 void Maquina4::updateDisplay() {
@@ -80,4 +53,17 @@ void Maquina4::updateDisplay() {
     //caso não chame esta função, as alterações não serão exibidas.
     refreshDisplay();
     bubble(txt2);
+}
+
+void Maquina4::initialize() {
+    if (getIndex() == 0) {
+        cMessage *msg = new cMessage("switchMsg");
+        send(msg, "port$o", randomPortIndex());
+    }
+}
+
+void Maquina4::handleMessage(cMessage *msg) {
+    switchState();
+    updateDisplay();
+    send(msg, "port$o", randomPortIndex());
 }

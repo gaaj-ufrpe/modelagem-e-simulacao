@@ -1,22 +1,21 @@
 package exemplo4;
 
-simple Maquina4 
-{
+simple Maquina4 {
     parameters:
         @display("i=device/laptop;i2=status/red, red");
     gates:
-        inout port1;
-        inout port2;
+        inout port[2];
 }
 
-network Empresa4
-{
+network Empresa4 {
+    types:
+        channel D extends ned.DelayChannel {
+            delay = 60s;
+        }
     submodules:
-        m1: Maquina4;
-        m2: Maquina4;
-        m3: Maquina4;
+        m[3]: Maquina4;
     connections:
-        m1.port1 <--> {  delay = 60s; } <--> m2.port2;
-        m2.port1 <--> {  delay = 60s; } <--> m3.port2;
-        m3.port1 <--> {  delay = 60s; } <--> m1.port2;
+        for i=0..sizeof(m)-1 {
+        	m[i].port[0] <--> D <--> m[(i+1)%sizeof(m)].port[1];
+        }
 }
