@@ -31,8 +31,8 @@ void ServidorFila::initialize() {
 
 void ServidorFila::handleMessage(cMessage *msg) {
     if (msg==msgFimProcesso) {
+        delete processando;
         if (fila.isEmpty()) {
-            delete processando;
             processando = nullptr;
         } else {
             processando = check_and_cast<cMessage *>(fila.pop());
@@ -52,6 +52,7 @@ void ServidorFila::colocarFila(cMessage *msg) {
         EV << "Fila cheia! A tarefa \""<< msg->getFullName() << "\" foi descartada.\n";
         bubble("Tarefa descartada!");
         refreshDisplay();
+        delete msg;
     } else {
         EV << "Colocando a tarefa \"" << msg->getFullName() << "\" na fila." << endl;
         fila.insert(msg);
