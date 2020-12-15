@@ -13,4 +13,5 @@ Define_Module(Servidor);
 
 void Servidor::handleMessage(cMessage *msg) {
     EV << "Recebeu \"" << msg->getFullName() << "\""<< endl;
+    delete msg;
 }

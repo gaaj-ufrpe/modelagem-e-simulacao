@@ -8,6 +8,7 @@ class ServidorFila : public cSimpleModule {
   private:
     cQueue fila;
     int capacidadeFila;
+    double tempoProcessamento;
     cMessage *processando;
     cMessage *msgFimProcesso;
     virtual void processar(cMessage *msg);
@@ -27,10 +28,13 @@ Define_Module(ServidorFila);
 void ServidorFila::initialize() {
     msgFimProcesso = new cMessage("fim");
     capacidadeFila = par("capacidadeFila");
+    tempoProcessamento = par("tempoProcessamento");
 }
 
 void ServidorFila::handleMessage(cMessage *msg) {
+    EV << "Recebeu \"" << msg->getFullName() << "\"."<< endl;
     if (msg==msgFimProcesso) {
+        EV << "Fim do processamento de \"" << processando->getFullName() << "\"." << endl;
         delete processando;
         if (fila.isEmpty()) {
             processando = nullptr;
@@ -47,21 +51,18 @@ void ServidorFila::handleMessage(cMessage *msg) {
 }
 
 void ServidorFila::colocarFila(cMessage *msg) {
-    EV << fila.getLength() << " tarefas na fila.\n";
-    if (capacidadeFila > 0 && fila.getLength() >= capacidadeFila) {
-        EV << "Fila cheia! A tarefa \""<< msg->getFullName() << "\" foi descartada.\n";
-        bubble("Tarefa descartada!");
-        refreshDisplay();
+    if (capacidadeFila > 0 && fila.getLength() == capacidadeFila) {
+        EV << "Descartando \""<< msg->getFullName() << "\". Motivo: fila cheia (#fila: " << capacidadeFila << "." << endl;
         delete msg;
     } else {
-        EV << "Colocando a tarefa \"" << msg->getFullName() << "\" na fila." << endl;
         fila.insert(msg);
+        EV << "Colocando \"" << msg->getFullName() << "\" na fila (#fila: " << fila.getLength() << ")." << endl;
     }
 }
 
 void ServidorFila::processar(cMessage *msg) {
-    simtime_t tempoServico = exponential(1.5);
-    EV << "Processando \"" << msg->getFullName() << "\" em " << tempoServico << "s." << endl;
+    simtime_t tempoServico = exponential(tempoProcessamento);
+    EV << "Processando \"" << msg->getFullName() << "\" por " << tempoServico << "s." << endl;
     scheduleAt(simTime()+tempoServico, msgFimProcesso);
 }
 

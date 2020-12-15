@@ -4,7 +4,8 @@ simple ServidorFila {
     parameters:
         @display("i=device/mainframe");
         int capacidadeFila = default(0);
-    gates:
+        double tempoProcessamento = default(1.0);
+        gates:
         input in;
 }
 
