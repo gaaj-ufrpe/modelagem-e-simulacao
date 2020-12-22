@@ -1,6 +1,6 @@
 package exemplo1;
 
-simple ServidorFila {
+simple ServidorFilaStats {
     parameters:
         @display("i=device/mainframe");
         int capacidadeFila = default(0);
@@ -9,14 +9,16 @@ simple ServidorFila {
         input in;
 }
 
-network RedeFila {
+network RedeFilaLimitadaStats {
     types:
         channel Ethernet100 extends ned.DatarateChannel {
             delay = 0.5s;
         }
     submodules:
         cliente: Cliente;
-        servidor: ServidorFila;
+        servidor: ServidorFilaStats {
+            capacidadeFila = 5;
+        };
     connections:
         cliente.out --> Ethernet100 --> servidor.in;
 }
