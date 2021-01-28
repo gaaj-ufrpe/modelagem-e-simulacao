@@ -1,0 +1,214 @@
+version 2
+run General-0-20210121-10:56:59-23812
+attr configname General
+attr datetime 20210121-10:56:59
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 23812
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar Network.cloud.loadBalancer queueLength:mean 0.95736892483902
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.loadBalancer queueLength:timeavg 0.96074089299629
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.loadBalancer queueLength:max 19
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.loadBalancer busy:timeavg 0.2594327077809
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.loadBalancer busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.loadBalancer dropped:count 612205
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.loadBalancer dropped:timeavg 0
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[0] queueLength:mean 19.968236389474
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[0] queueLength:timeavg 19.968265541567
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[0] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[0] busy:timeavg 2.824396187359e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[0] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[0] dropped:count 102034
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[0] dropped:timeavg 0.79950322816793
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[1] queueLength:mean 19.969167442544
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[1] queueLength:timeavg 19.969051637962
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[1] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[1] busy:timeavg 3.1835679568498e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[1] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[1] dropped:count 102034
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[1] dropped:timeavg 0.79877954904668
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[2] queueLength:mean 19.9669035135
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[2] queueLength:timeavg 19.966981175971
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[2] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[2] busy:timeavg 3.6896736320413e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[2] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[2] dropped:count 102034
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[2] dropped:timeavg 0.79876266732144
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[3] queueLength:mean 19.967099524673
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[3] queueLength:timeavg 19.966840445941
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[3] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[3] busy:timeavg 2.448898428346e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[3] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[3] dropped:count 102034
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[3] dropped:timeavg 0.79844338944176
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[4] queueLength:mean 19.967726760425
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[4] queueLength:timeavg 19.96741838597
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[4] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[4] busy:timeavg 8.8650123106124e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[4] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[4] dropped:count 102034
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[4] dropped:timeavg 0.80004796657163
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+scalar Network.cloud.server[5] queueLength:mean 19.971097869338
+attr interpolationmode none
+attr title "Queue length, mean"
+attr unit ms
+scalar Network.cloud.server[5] queueLength:timeavg 19.970512324244
+attr interpolationmode none
+attr title "Queue length, timeavg"
+attr unit ms
+scalar Network.cloud.server[5] queueLength:max 20
+attr interpolationmode none
+attr title "Queue length, max"
+attr unit ms
+scalar Network.cloud.server[5] busy:timeavg 8.309928666854e-005
+attr interpolationmode none
+attr title "Busy, timeavg"
+attr unit ms
+scalar Network.cloud.server[5] busy:max 1
+attr interpolationmode none
+attr title "Busy, max"
+attr unit ms
+scalar Network.cloud.server[5] dropped:count 102033
+attr interpolationmode none
+attr title "Dropped jobs, count"
+attr unit ms
+scalar Network.cloud.server[5] dropped:timeavg 0.80432960451493
+attr interpolationmode none
+attr title "Dropped jobs, timeavg"
+attr unit ms
+
