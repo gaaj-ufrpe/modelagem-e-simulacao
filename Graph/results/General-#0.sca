@@ -1,0 +1,54 @@
+version 2
+run General-0-20210223-17:53:59-18428
+attr configname General
+attr datetime 20210223-17:53:59
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Graph
+attr processid 18428
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar Graph.sink specialPathDelay:mean 3.7272727272727
+attr title "Special Path Delay, mean"
+attr unit s
+scalar Graph.sink specialPathDelay:max 4
+attr title "Special Path Delay, max"
+attr unit s
+scalar Graph.sink regularPathDelay:mean 7
+attr title "Regular Path Delay, mean"
+attr unit s
+scalar Graph.sink regularPathDelay:max 7
+attr title "Regular Path Delay, max"
+attr unit s
+scalar Graph.sink pathDelay:mean 4.8823529411765
+attr title "Path Delay, mean"
+attr unit s
+scalar Graph.sink pathDelay:max 7
+attr title "Path Delay, max"
+attr unit s
+scalar Graph.sink specialPathDistance:mean 5.4545454545455
+attr title "Special Path Distance, mean"
+attr unit s
+scalar Graph.sink specialPathDistance:max 6
+attr title "Special Path Distance, max"
+attr unit s
+scalar Graph.sink regularPathDistance:mean 6
+attr title "Regular Path Distance, mean"
+attr unit s
+scalar Graph.sink regularPathDistance:max 6
+attr title "Regular Path Distance, max"
+attr unit s
+scalar Graph.sink pathDistance:mean 5.6470588235294
+attr title "Path Distance, mean"
+attr unit s
+scalar Graph.sink pathDistance:max 6
+attr title "Path Distance, max"
+attr unit s
+
